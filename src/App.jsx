@@ -5,7 +5,12 @@ import Input from './components/Input'
 import ToDoList from './components/ToDoList'
 
 
+
 export default function App() {
+
+
+
+
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -61,6 +66,21 @@ export default function App() {
     setTodos(updatedList);
   }
 
+//update
+const handleUpdate=(id)=>{
+  /*
+    const updateTodo = todos.map(todo=>{
+      if (todo.id === id) {
+        return { ...todo, title: !todo.title }
+      }
+      return todo;
+    })
+    setTodos(updateTodo)
+    */
+   console.log("hola");
+}
+
+
   const handleClearComplete = () => {
     const updatedList = todos.filter(todo => !todo.completed);
     setTodos(updatedList);
@@ -70,6 +90,7 @@ export default function App() {
     const updatedList = todos.filter(todo => todo.id !== id);
     setTodos(updatedList);
   }
+  
 
   const showAllTodos = () => {
     setActiveFilter('Todas')
@@ -114,6 +135,7 @@ export default function App() {
             handleSetComplete={handleSetComplete}
             handleDelete={handleDelete}
             handleClearComplete={handleClearComplete}
+            handleUpdate={handleUpdate}
           />
 
 

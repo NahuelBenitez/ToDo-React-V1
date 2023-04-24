@@ -11,7 +11,8 @@ export default function ToDoList({ todos,
   handleClearComplete,
   showAllTodos,
   showActiveTodos,
-  showCompletedTodos }) {
+  showCompletedTodos,
+}) {
   return (
     <div className='flex flex-col mt-6 rounded-lg overflow-hidden shadow-2xl'>
       {todos.map(todo => {
@@ -20,7 +21,9 @@ export default function ToDoList({ todos,
           key={todo.id} 
           todo={todo} 
           handleSetComplete={handleSetComplete} 
-          handleDelete={handleDelete} />
+          handleDelete={handleDelete} 
+
+          />
         )
       })}
       <TodoFilters

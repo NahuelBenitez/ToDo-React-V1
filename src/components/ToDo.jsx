@@ -1,8 +1,10 @@
-import { useState } from "react";
-
+import React, { useState } from 'react'
+import Modal from './Modal';
 const ToDo = ({ todo, handleDelete, handleSetComplete }) => {
-   
+
     const { id, title, completed } = todo;
+
+
 
     return (
         <div
@@ -25,8 +27,15 @@ const ToDo = ({ todo, handleDelete, handleSetComplete }) => {
 
                 <p className={"pl-3 " + (completed && "line-through")}>{title}</p>
             </div>
+            <div className="container text-end w-12 h-9 flex">
+                <img onClick={() => handleDelete(id)} className="h-5 w-5 cursor-pointer transition-all duration-300 ease-in " src="/close-icon.svg" alt="Close Icon" />
+                <div>
+                    <Modal />
+                </div>
 
-            <img onClick={() => handleDelete(id)} className="h-5 w-5 cursor-pointer transition-all duration-300 ease-in" src="/close-icon.svg" alt="Close Icon" />
+
+            </div>
+
         </div>
     );
 }
